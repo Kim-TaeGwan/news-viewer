@@ -1,5 +1,5 @@
 import React from "react";
-import { Route } from "react-router-dom";
+import { Route, HashRouter } from "react-router-dom";
 import NewsPage from "./pages/NewsPage";
 // import Categories from "./components/Categories";
 // import NewsList from "./components/NewsList";
@@ -12,7 +12,9 @@ const App = () => {
       {/* category와 onSelect 함수를 Categories 컴포넌트에게 props로 전달,  category값을 NewsList 컴포넌트에게도 전달*/}
       {/* <Categories category={category} onSelect={onSelect} />
       <NewsList category={category} /> */}
-      <Route path="/:category?" component={NewsPage} />
+      <HashRouter basename="/">
+        <Route path="/:category?" component={NewsPage} />
+      </HashRouter>
       {/*
         path에 /:category?와 같은 형태로 맨 뒤에 물음표 문자가 들어가 있다.
         category값이 선택적(optional)이라는 의미.
