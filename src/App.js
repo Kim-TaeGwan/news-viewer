@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, HashRouter } from "react-router-dom";
+import { Route, HashRouter, Switch } from "react-router-dom";
 import NewsPage from "./pages/NewsPage";
 // import Categories from "./components/Categories";
 // import NewsList from "./components/NewsList";
@@ -13,7 +13,9 @@ const App = () => {
       {/* <Categories category={category} onSelect={onSelect} />
       <NewsList category={category} /> */}
       <HashRouter basename="/">
-        <Route path="/:category?" component={NewsPage} />
+        <Switch>
+          <Route path="/:category?" component={NewsPage} />
+        </Switch>
       </HashRouter>
       {/*
         path에 /:category?와 같은 형태로 맨 뒤에 물음표 문자가 들어가 있다.
